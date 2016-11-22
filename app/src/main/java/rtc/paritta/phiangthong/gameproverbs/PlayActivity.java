@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -16,6 +17,8 @@ public class PlayActivity extends AppCompatActivity {
     private Button choice0Button, choice1Button, choice2Button, choice3Button;
     private int timeAnInt = 0, timesAnInt = 1, scoreAnInt = 0;
     private boolean timeABoolean = false;   // false ==> ยังไม่หมดเวลา 120 วินาที
+    private String jsonString;
+    private String[] imageStrings, choice0Strings, choice1Strings, choice2Strings, choice3Strings, answerStrings;
 
 
 
@@ -34,12 +37,34 @@ public class PlayActivity extends AppCompatActivity {
         choice2Button = (Button) findViewById(R.id.button3);
         choice3Button = (Button) findViewById(R.id.button4);
 
+        //Syn Question From Server
+        synQuestion();
+
         //My Loop
         myLoop();
 
 
 
     }   // Main Method
+
+    private void synQuestion() {
+
+        try {
+
+            SynQuestion synQuestion = new SynQuestion(PlayActivity.this);
+            synQuestion.execute();
+            jsonString = synQuestion.get();
+            Log.d("gameV1", "JSON == > " + jsonString);
+
+
+
+        } catch (Exception e) {
+            Log.d("gameV1", "e synQuestion ==> " + e.toString());
+        }
+
+
+
+    }   // synQuestion
 
     private void myLoop() {
         //***************
