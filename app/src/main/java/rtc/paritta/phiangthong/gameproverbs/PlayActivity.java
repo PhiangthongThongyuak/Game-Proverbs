@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -25,7 +27,6 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
     private boolean timeABoolean = false;   // false ==> ยังไม่หมดเวลา 120 วินาที
     private String jsonString;
     private String[] imageStrings, choice0Strings, choice1Strings, choice2Strings, choice3Strings, answerStrings;
-
 
 
     @Override
@@ -46,6 +47,12 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
         //Syn Question From Server
         synQuestion();
 
+        //Show First View
+        Random random = new Random();
+        randomAnInt = random.nextInt(lengthAnInt);
+        Log.d("gameV2", "randomAnInt ==> " + randomAnInt);
+        ShowView();
+
         //My Loop
         myLoop();
 
@@ -57,6 +64,21 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
 
 
     }   // Main Method
+
+    private void ShowView() {
+
+        choice0Button.setText(choice0Strings[randomAnInt]);
+        choice1Button.setText(choice1Strings[randomAnInt]);
+        choice2Button.setText(choice2Strings[randomAnInt]);
+        choice3Button.setText(choice3Strings[randomAnInt]);
+
+        Picasso.with(PlayActivity.this)
+                .load(imageStrings[randomAnInt])
+                .resize(400, 350)
+                .into(imageView);
+
+
+    }   // showView
 
     private void synQuestion() {
 
@@ -91,9 +113,8 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
                 answerStrings[i] = jsonObject.getString("Answer");
 
 
+
             }   // for
-
-
 
 
         } catch (Exception e) {
@@ -146,6 +167,7 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
         randomAnInt = random.nextInt(lengthAnInt);
         Log.d("gameV2", "randomAnInt ==> " + randomAnInt);
 
+        ShowView();
 
 
     }   //onClick
