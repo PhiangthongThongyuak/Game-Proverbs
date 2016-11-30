@@ -74,7 +74,7 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
 
         Picasso.with(PlayActivity.this)
                 .load(imageStrings[randomAnInt])
-                .resize(400, 350)
+                .resize(800, 700)
                 .into(imageView);
 
 
