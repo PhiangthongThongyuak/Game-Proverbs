@@ -18,7 +18,7 @@ public class WelcomeActivity extends AppCompatActivity {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(WelcomeActivity.this,PlayActivity.class));
+                startActivity(new Intent(WelcomeActivity.this, PlayActivity.class));
                 finish();
             }
         });

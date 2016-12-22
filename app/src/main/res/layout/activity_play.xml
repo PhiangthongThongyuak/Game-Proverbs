@@ -60,7 +60,7 @@
             android:text="Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/button"
+            android:id="@+id/button1"
             android:textColor="@android:color/background_light"
             android:background="@color/colorAccent"
             android:layout_marginBottom="5dp" />
@@ -74,22 +74,6 @@
             android:background="@color/colorAccent"
             android:layout_marginBottom="5dp" />
 
-        <Button
-            android:text="Button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/button3"
-            android:background="@color/colorAccent"
-            android:textColor="@android:color/background_light"
-            android:layout_marginBottom="5dp" />
-
-        <Button
-            android:text="Button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/button4"
-            android:background="@color/colorAccent"
-            android:textColor="@android:color/background_light" />
     </LinearLayout>
 
     <RelativeLayout
@@ -98,11 +82,11 @@
         android:layout_above="@+id/linBotton"
         android:layout_below="@+id/linTop">
 
-        <ImageView
+        <TextView
+            android:text="Question"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/textView4" />
 
-            android:id="@+id/imageView3"
-            android:layout_centerInParent="true" />
     </RelativeLayout>
 </RelativeLayout>
