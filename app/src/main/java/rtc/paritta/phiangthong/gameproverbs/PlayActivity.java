@@ -26,7 +26,7 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
         //Bind Widget
         scoreTextView = (TextView) findViewById(R.id.textView);
         timeTextView = (TextView) findViewById(R.id.textView2);
-        articleTextView = (TextView) findViewById(R.id.textView3);
+        //articleTextView = (TextView) findViewById(R.id.textView3);
         questiontextView = (TextView) findViewById(R.id.textView4);
         choice1Button = (Button) findViewById(R.id.button1);
         choice2Button = (Button) findViewById(R.id.button2);
