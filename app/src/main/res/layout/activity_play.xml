@@ -10,8 +10,37 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="rtc.paritta.phiangthong.gameproverbs.PlayActivity"
-    android:background="@drawable/wall20">
-
+    android:background="@drawable/bg10">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linTop">
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:textColor="@android:color/background_dark"
+            android:textStyle="normal|bold"
+            android:textAlignment="center"
+            android:background="@android:color/holo_orange_dark"
+            android:fontFamily="casual" />
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:textStyle="normal|bold"
+            android:textColor="@android:color/background_dark"
+            android:textAlignment="center"
+            android:background="@android:color/holo_orange_dark"
+            android:fontFamily="casual" />
+    </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -23,57 +52,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/button1"
-            android:textColor="@android:color/background_light"
+            android:textColor="@android:color/white"
             android:background="@android:color/holo_blue_bright"
             android:layout_marginBottom="20dp"
-            android:textSize="18sp"
-            android:textStyle="normal|bold" />
+            android:textSize="16sp"
+            android:textStyle="normal|bold"
+            android:fontFamily="casual" />
         <Button
             android:text="Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/button2"
-            android:textColor="@android:color/background_light"
+            android:textColor="@android:color/white"
             android:background="@android:color/holo_blue_bright"
             android:layout_marginBottom="60dp"
-            android:textSize="18sp"
-            android:textStyle="normal|bold" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linTop"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
-
-        <TextView
-            android:text="TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView2"
-            android:layout_weight="1"
-            android:textSize="18sp"
-            android:textColor="@android:color/holo_red_dark"
+            android:textSize="16sp"
             android:textStyle="normal|bold"
-            android:background="@android:color/holo_green_light"
-            android:textAlignment="center" />
-
-        <TextView
-            android:text="TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView"
-            android:layout_weight="1"
-            android:textSize="20sp"
-            android:textStyle="normal|bold"
-            android:textColor="@android:color/holo_red_dark"
-            android:background="@android:color/background_light"
-            android:textAlignment="center" />
+            android:fontFamily="casual" />
     </LinearLayout>
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -81,16 +77,15 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
         <TextView
-            android:text="Question"
+            android:text="คำถาม"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/textView4"
             android:layout_marginBottom="200dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="50dp"
             android:textSize="22sp"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/colorPrimary"
             android:textStyle="normal|bold"
-            android:background="?attr/colorControlHighlight"
-            android:gravity="center" />
+            android:fontFamily="casual" />
     </RelativeLayout>
 </RelativeLayout>
