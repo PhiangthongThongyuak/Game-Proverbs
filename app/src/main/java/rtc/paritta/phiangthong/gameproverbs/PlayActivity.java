@@ -16,7 +16,7 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
     //Explicit
     private TextView scoreTextView, timeTextView, articleTextView, questiontextView;
     private Button choice1Button, choice2Button;
-    private int timeAnInt = 0, timesAnInt = 1, scoreAnInt = 0, randomAnInt, lengthAnInt;
+    private int timeAnInt = 0, timesAnInt = 1, scoreAnInt = 0, randomAnInt, lengthAnInt, myAnswer;
     private boolean timeABoolean = false;   // false ==> ยังไม่หมดเวลา 120 วินาที
     private String jsonString;
     private String[] questionStrings, choice1Strings, choice2Strings, answerStrings;
@@ -64,6 +64,8 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
         questiontextView.setText(questionStrings[randomAnInt]);
         choice1Button.setText(choice1Strings[randomAnInt]);
         choice2Button.setText(choice2Strings[randomAnInt]);
+        scoreTextView.setText("Score = " + Integer.toString(scoreAnInt) );
+
     }   // showView
     private void synQuestion() {
         try {
@@ -118,9 +120,24 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
     }   // myLoop
     @Override
     public void onClick(View v) {
+
+        switch (v.getId()) {
+            case R.id.button1:
+                myAnswer = 1;
+                break;
+            case R.id.button2:
+                myAnswer = 2;
+                break;
+        }
+
         Random random = new Random();
         randomAnInt = random.nextInt(lengthAnInt);
         Log.d("gameV2", "randomAnInt ==> " + randomAnInt);
+
+        if (myAnswer == Integer.parseInt(answerStrings[randomAnInt])) {
+            scoreAnInt += 1;
+        }
+
         ShowView();
     }   //onClick
 }   // Main Class
