@@ -7,7 +7,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import com.squareup.picasso.Picasso;
+import android.media.MediaPlayer;
+//import com.squareup.picasso.Picasso;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import java.util.Random;
@@ -23,6 +24,22 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play);
+
+        //Sound Effect
+        MediaPlayer mediaPlayer = MediaPlayer.create(getBaseContext(), R.raw.bgm);
+        mediaPlayer.start();
+
+        // Auto Run
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                startActivity(new Intent(PlayActivity.this, ShowScoreActivity.class));
+                finish();
+            }
+        }, 120000);
+
+
         //Bind Widget
         scoreTextView = (TextView) findViewById(R.id.textView);
         timeTextView = (TextView) findViewById(R.id.textView2);
