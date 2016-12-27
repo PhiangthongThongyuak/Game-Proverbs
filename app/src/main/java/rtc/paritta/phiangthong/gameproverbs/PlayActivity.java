@@ -70,7 +70,7 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
         questiontextView.setText(questionStrings[randomAnInt]);
         choice1Button.setText(choice1Strings[randomAnInt]);
         choice2Button.setText(choice2Strings[randomAnInt]);
-        scoreTextView.setText("Score = " + Integer.toString(scoreAnInt));
+        scoreTextView.setText("คะแนน : " + Integer.toString(scoreAnInt));
 
     }   // showView
 
