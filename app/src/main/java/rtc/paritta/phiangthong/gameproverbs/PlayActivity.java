@@ -18,9 +18,10 @@ import java.util.Random;
 //import com.squareup.picasso.Picasso;
 public class PlayActivity extends AppCompatActivity implements View.OnClickListener {
     //Explicit
+    public int scoreAnInt=0;
     private TextView scoreTextView, timeTextView, articleTextView, questiontextView;
     private Button choice1Button, choice2Button;
-    private int timeAnInt = 0, timesAnInt = 1, scoreAnInt = 0, randomAnInt, lengthAnInt, myAnswer;
+    private int timeAnInt = 0, timesAnInt = 1, randomAnInt, lengthAnInt, myAnswer;
     private boolean timeABoolean = false;   // false ==> ยังไม่หมดเวลา 120 วินาที
     private String jsonString;
     private String[] questionStrings, choice1Strings, choice2Strings, answerStrings;
